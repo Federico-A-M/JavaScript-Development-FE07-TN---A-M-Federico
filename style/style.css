@@ -1,0 +1,193 @@
+/*---------------------------------------- navbar -----------------------------------------------------*/
+nav{
+    height: 20vh;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-size: 2.5vh;
+}
+
+.logo{
+    padding-left: 10vh;
+    display: flex;   
+
+}
+
+
+.anchor {
+    display: flex;
+    flex-direction: column;
+    border: solid;
+    border-width: 0px;
+    color: rgb(255, 0, 149);
+    text-decoration: none;
+    padding:0px 0px 10px 0px;
+    position: relative;
+  
+}
+  
+.anchor:after{
+    content: "";
+    width: 0;
+    height: 4px;
+    position: absolute;
+    bottom: 0;
+    right: 0%;
+    transition: all .5s;
+    will-change: width;
+}
+  
+.anchor:hover:after{
+    background-color: rgb(255, 0, 149);
+    border-width: 1.5px;
+    color: whitesmoke;
+    text-decoration: none;
+    margin: 0px;
+    transform: scaleX(1);
+  
+    width: 100%;
+    right: 0;
+}
+  
+.anchor:hover{
+    color: rgb(0, 255, 255);
+}
+
+/*---------------------------------------- carousel -----------------------------------------------------*/
+
+
+.carrousel{
+    width: 100%;
+}
+
+.conteCarrousel{
+    width: 100%;
+    height: 400px;
+    overflow: hidden;
+}
+
+.itemCarrousel{
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.itemCarrouselTarjeta{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    color: white;
+    text-align: center;
+}
+
+.itemCarrouselTarjeta > h1 {
+    font-size: 10vh;
+    width: 900px;
+    background: linear-gradient(90deg, rgba(0, 0, 0, 0) 0%, rgb(0, 0, 0) 50%, rgba(0, 0, 0, 0) 100%);
+
+
+}
+
+.itemCarrouselArrows{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%; 
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 40px; 
+}
+
+.itemCarrouselArrows > i:hover {
+    cursor: pointer;
+}
+
+#itemCarrousel-1{
+    background-image: url(/assets/1.jpg);
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover; /* Resize the background image to cover the entire container */
+}
+
+#itemCarrousel-2{
+    background-image: url(/assets/2.jpg);
+    background-position: bottom; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover; /* Resize the background image to cover the entire container */
+}
+
+#itemCarrousel-3{
+    background-image: url(/assets/3.jpg);
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover; /* Resize the background image to cover the entire container */
+}
+
+#itemCarrousel-4{
+    background-image: url(/assets/4.jpg);
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover; /* Resize the background image to cover the entire container */
+}
+
+#itemCarrousel-5{
+    background-image: url(/assets/5.jpg);
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover; /* Resize the background image to cover the entire container */
+}
+
+.conteCarrouselController{
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.conteCarrouselController > a{
+    text-decoration: none;
+    font-size: 2em;
+    color: grey;
+}
+
+.itemCarrouselArrows > a > i{
+    color: white;
+}
+
+
+
+/*---------------------------------------- espaciador --------------------------------------------------*/
+
+.cuadrado_de_color{
+    height: 200px;
+    padding: 0%;
+}
+
+
+
+
+
+/*---------------------------------------- Footer --------------------------------------------------*/
+.footer_style{
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgb(119, 0, 255) 5%, rgb(255, 0, 149) 100%);
+    height: 150px;
+    align-content: center;
+}
+
+.cohort{
+    text-align: end;
+}
+
+
+.social_logo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+}
