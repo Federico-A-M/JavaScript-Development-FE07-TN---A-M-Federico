@@ -23,35 +23,51 @@
     <div class="container-fluid">
       <header>
         <!-- ------------------------- navbar ------------------------------ -->
-        <nav>
-          <div class="row d-flex align-items-center mb-5">
-            <div class="logo col-6">
-              <img
-                src="/assets/Logo Amazing Events.png"
-                alt="logo of Amazing Events"
-              />
-            </div>
-            <div class="col-1">
-              <a class="anchor" href="/index.html">Home</a>
-            </div>
-            <!-- -->
-            <div class="col-2">
-              <a class="anchor" href="/upcoming_events.html">Upcoming Events</a>
-            </div>
-            <!-- -->
-            <div class="col-1">
-              <a class="anchor" href="/past_events.html">Past Events</a>
-            </div>
-            <!-- -->
-            <div class="col-1">
-              <a class="anchor" href="/contact.html">contact</a>
-            </div>
-            <!-- -->
-            <div class="col-1">
-              <a class="anchor" href="#">stats</a>
-            </div>
+        <div class="nav-bar-row row">
+          <div class="logo col">
+            <img
+              src="/assets/Logo Amazing Events.png"
+              alt="logo of Amazing Events"
+            />
           </div>
-        </nav>
+          <div class="col">
+
+            <nav class="navbar navbar-expand-lg">
+              <div class="container-fluid">
+                <button
+                  class="navbar-toggler"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#navbarNav"
+                  aria-controls="navbarNav"
+                  aria-expanded="false"
+                  aria-label="Toggle navigation"
+                >
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                  <ul class="navbar-nav">
+                    <li class="nav-item">
+                      <a class="anchor nav-link" href="/index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="anchor nav-link" href="/upcoming_events.html">Upcoming Events</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="anchor nav-link" href="/past_events.html">Past Events</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="anchor nav-link" href="/contact.html">contact</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="anchor nav-link" href="#">stats</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </nav>
+          </div>
+        </div>
 
         <!-- ------------------------- carrousel ------------------------------ -->
         <div class="carrousel mb-5">
@@ -80,7 +96,91 @@
         </div>
       </header>
 
-      <main></main>
+      <main class="main__of__table">
+        <legend>Events statistics</legend>
+        <table>
+          <thead>
+            <tr>
+              <th>Events with the highest percentage of attendance</th>
+              <th>Events with the lowest percentage of attendance</th>
+              <th>Events with larger capacity</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+          </tbody>
+        </table>
+
+        <legend>Upcoming events statistics by category</legend>
+        <table>
+          <thead>
+            <tr>
+              <th>Categories</th>
+              <th>Revenues</th>
+              <th>Percentage of attendance</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+          </tbody>
+        </table>
+
+        <legend>Past events statistics by category</legend>
+        <table>
+          <thead>
+            <tr>
+              <th>Categories</th>
+              <th>Revenues</th>
+              <th>Percentage of attendance</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+          </tbody>
+        </table>
+      </main>
 
       <!-- -------------  Footer zone  -------------------------- -->
 
@@ -89,34 +189,31 @@
           <div class="social_logo col">
             <a href="https://es-la.facebook.com/" target="_blank">
               <img
-                src="/assets/Recurso 2.png"
+                src="/assets/5335781_camera_instagram_social media_instagram logo_icon.png"
                 alt="instagram"
-                width="75"
-                height="75"
+                class="image_social_logo"
               />
             </a>
           </div>
           <div class="social_logo col">
             <a href="https://www.instagram.com/" target="_blank">
               <img
-                src="/assets/Recurso 3.png"
+                src="/assets/5305153_fb_facebook_facebook logo_icon.png"
                 alt="facebook"
-                width="75"
-                height="75"
+                class="image_social_logo"
               />
             </a>
           </div>
           <div class="social_logo col">
             <a href="https://web.whatsapp.com/.html" target="_blank">
               <img
-                src="/assets/Recurso 4.png"
+                src="assets/5305166_call_chat_mobile_whatsapp_whatsapp logo_icon.png"
                 alt="wassap"
-                width="75"
-                height="75"
+                class="image_social_logo"
               />
             </a>
           </div>
-          <div class="cohort col-9"><h1>Cohort?</h1></div>
+          <div class="cohort col-9"><h1>Cohort</h1></div>
         </div>
       </footer>
     </div>

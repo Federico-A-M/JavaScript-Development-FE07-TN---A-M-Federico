@@ -23,42 +23,57 @@
     <div class="container-fluid">
       <header>
         <!-- ------------------------- navbar ------------------------------ -->
-        <nav>
-          <div class="row d-flex align-items-center mb-5">
-            <div class="logo col-6">
-              <img
-                src="/assets/Logo Amazing Events.png"
-                alt="logo of Amazing Events"
-              />
-            </div>
-            <div class="col-1">
-              <a class="anchor" href="/index.html">Home</a>
-            </div>
-            <!-- -->
-            <div class="col-2">
-              <a class="anchor" href="/upcoming_events.html">Upcoming Events</a>
-            </div>
-            <!-- -->
-            <div class="col-1">
-              <a class="anchor" href="/past_events.html">Past Events</a>
-            </div>
-            <!-- -->
-            <div class="col-1">
-              <a class="anchor" href="#">contact</a>
-            </div>
-            <!-- -->
-            <div class="col-1">
-              <a class="anchor" href="/stats.html">stats</a>
-            </div>
+        <div class="nav-bar-row row">
+          <div class="logo col">
+            <img
+              src="/assets/Logo Amazing Events.png"
+              alt="logo of Amazing Events"
+            />
           </div>
-        </nav>
+          <div class="col">
 
+            <nav class="navbar navbar-expand-lg">
+              <div class="container-fluid">
+                <button
+                  class="navbar-toggler"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#navbarNav"
+                  aria-controls="navbarNav"
+                  aria-expanded="false"
+                  aria-label="Toggle navigation"
+                >
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                  <ul class="navbar-nav">
+                    <li class="nav-item">
+                      <a class="anchor nav-link" href="/index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="anchor nav-link" href="/upcoming_events.html">Upcoming Events</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="anchor nav-link" href="/past_events.html">Past Events</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="anchor nav-link" href="#">contact</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="anchor nav-link" href="/stats.html">stats</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </nav>
+          </div>
+        </div>
         <!-- ------------------------- carrousel ------------------------------ -->
-        <div class="carrousel mb-5" >
+        <div class="carrousel mb-5">
           <div class="conteCarrousel">
             <!-- 4 -->
             <div class="itemCarrousel" id="itemCarrousel-4">
-              <div class="itemCarrouselTarjeta"><H1>CONTACT</H1></div>
+              <div class="itemCarrouselTarjeta"><h1>CONTACT</h1></div>
               <div class="itemCarrouselArrows">
                 <a href="/past_events.html">
                   <i class="arrow-left">Prev</i>
@@ -80,7 +95,36 @@
         </div>
       </header>
 
-      <main></main>
+      <main>
+        <div class="div__row__form__contact row">
+          <section class="form-contact">
+            <div class="cabecera row">
+              <div class="col-9">
+                <img
+                  src="/assets/favicom Amazing Events white.png"
+                  alt="logo"
+                  height="100"
+                />
+              </div>
+              <div class="col">
+                <h6>contact us</h6>
+              </div>
+            </div>
+
+            <form action="" class="contact" method="POST">
+              <label for="nombres">Name</label>
+              <input type="text" name="name" id="nombres" />
+
+              <label for="correo">Email</label>
+              <input type="text" name="email" id="correo" />
+
+              <label for="mensaje">Mensagge</label>
+              <textarea name="mensaje" id="mensagge"></textarea>
+              <input type="submit" value="Send" />
+            </form>
+          </section>
+        </div>
+      </main>
 
       <!-- -------------  Footer zone  -------------------------- -->
 
@@ -89,34 +133,31 @@
           <div class="social_logo col">
             <a href="https://es-la.facebook.com/" target="_blank">
               <img
-                src="/assets/Recurso 2.png"
+                src="/assets/5335781_camera_instagram_social media_instagram logo_icon.png"
                 alt="instagram"
-                width="75"
-                height="75"
+                class="image_social_logo"
               />
             </a>
           </div>
           <div class="social_logo col">
             <a href="https://www.instagram.com/" target="_blank">
               <img
-                src="/assets/Recurso 3.png"
+                src="/assets/5305153_fb_facebook_facebook logo_icon.png"
                 alt="facebook"
-                width="75"
-                height="75"
+                class="image_social_logo"
               />
             </a>
           </div>
           <div class="social_logo col">
             <a href="https://web.whatsapp.com/.html" target="_blank">
               <img
-                src="/assets/Recurso 4.png"
+                src="assets/5305166_call_chat_mobile_whatsapp_whatsapp logo_icon.png"
                 alt="wassap"
-                width="75"
-                height="75"
+                class="image_social_logo"
               />
             </a>
           </div>
-          <div class="cohort col-9"><h1>Cohort?</h1></div>
+          <div class="cohort col-9"><h1>Cohort</h1></div>
         </div>
       </footer>
     </div>
