@@ -14,3 +14,7 @@ values.forEach((element) => {
 });
 
 cardDivision(new_values_split,4);
+
+
+
+
