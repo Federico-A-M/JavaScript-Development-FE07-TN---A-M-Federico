@@ -33,10 +33,7 @@ function cardDivision(values,cont_limit){
               $span_price = document.createElement("span"),
               $div_col_link = document.createElement("div"),
               $btn = document.createElement("button");
-        
-              //$ = document.createTextNode("..."), para asignar alguna variable de tipo texto a un atributo
-              //$ = document.querySelector(".cards"),
-              //$.classList.add(""); dar clase de css a un objeto del dom
+
         
         $div_card_col.classList.add("card_col");
         $div_card_col.classList.add("col");
@@ -48,8 +45,6 @@ function cardDivision(values,cont_limit){
         let category = element.category;
         $img.setAttribute("src", sources);
         $img.setAttribute("alt", category);
-        // $img.setAttribute("widht","300");
-        // $img.setAttribute("height","200");
         
         $div_card_body.classList.add("card-body");
         
@@ -70,9 +65,64 @@ function cardDivision(values,cont_limit){
         $btn.classList.add("btn");
         $btn.classList.add("btn-primary");
         $btn.innerHTML = "See more";
-        $btn.setAttribute("id", `_id: ${element._id}`);
-        let btnId = `_id: ${element._id}`; 
-        $btn.addEventListener('click', abrirModal);
+        // $btn.setAttribute("id", `_id: ${element._id}`);
+        // let btnId = `_id: ${element._id}`; 
+        $btn.addEventListener('click', () => { 
+
+
+          var modal = document.getElementById("myModal");
+          var span = document.getElementsByClassName("close")[0];
+          var body = document.getElementsByTagName("body")[0];
+        
+          var $imag_modal = document.getElementById("imag_modal");
+          $imag_modal.setAttribute("src", sources);
+          $imag_modal.setAttribute("alt", category);
+
+          var $event_name = document.getElementById("event_name");
+          $event_name.innerHTML = element.name
+          var $category_name = document.getElementById("category_name");
+          $category_name.innerHTML = element.category
+          var $description_p = document.getElementById("description_p");
+          $description_p.innerHTML = element.description
+          
+          var $h6_place = document.getElementById("h6_place");
+          $h6_place.innerHTML = "Place:  " + element.place
+          var $h6_date = document.getElementById("h6_date");
+          $h6_date.innerHTML = "Date:  " + element.date
+          var $h6_capacity = document.getElementById("h6_capacity");
+          $h6_capacity.innerHTML = "Capacity:  " + element.capacity
+          var $h6_assistance = document.getElementById("h6_assistance");
+          $h6_assistance.innerHTML = "Assistance:  " + element.assistance
+          var $h6_price = document.getElementById("h6_price");
+          $h6_price.innerHTML = "Price:  " + element.price;
+          
+
+          modal.style.display = "block";
+          body.style.position = "static";
+          body.style.height = "100%";
+          body.style.overflow = "hidden";
+        
+        
+          span.onclick = function() {
+            modal.style.display = "none";
+          
+            body.style.position = "inherit";
+            body.style.height = "auto";
+            body.style.overflow = "visible";
+          }
+        
+          window.onclick = function(event) {
+            if (event.target == modal) {
+              modal.style.display = "none";
+          
+              body.style.position = "inherit";
+              body.style.height = "auto";
+              body.style.overflow = "visible";
+            }
+          }
+
+
+        });
 
         let price = `\$ ${element.price}`;
         $span_price.innerHTML = price;
@@ -94,53 +144,11 @@ function cardDivision(values,cont_limit){
         fragment.appendChild($div_cards_home);
       
         cont ++;
-        identificador ++;
-        // console.log(cont)
+
+
        });
 
   $main.appendChild(fragment);
 
-};
-
-// "name":"Collectivities Party",
-// "date":"2021-12-12",
-// "description":"Enjoy your favourite dishes, from different countries, in a unique event for the whole family.",
-// "category":"Food Fair",
-// "place":"Room A",
-// "capacity":45000,
-// "assistance":42756,
-// "price":5
-
-function abrirModal(esto){
-
-  console.log(esto);
-
-  var modal = document.getElementById("myModal");
-  var span = document.getElementsByClassName("close")[0];
-  var body = document.getElementsByTagName("body")[0];
-
-  modal.style.display = "block";
-  body.style.position = "static";
-  body.style.height = "100%";
-  body.style.overflow = "hidden";
-
-
-  span.onclick = function() {
-    modal.style.display = "none";
-  
-    body.style.position = "inherit";
-    body.style.height = "auto";
-    body.style.overflow = "visible";
-  }
-
-  window.onclick = function(event) {
-    if (event.target == modal) {
-      modal.style.display = "none";
-  
-      body.style.position = "inherit";
-      body.style.height = "auto";
-      body.style.overflow = "visible";
-    }
-  }
 };
 
