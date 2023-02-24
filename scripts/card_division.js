@@ -1,6 +1,7 @@
 const $main = document.getElementById("main_index")
 
 var cont = 0;
+var identificador = 1;
 
 var $div_cards_home = document.createElement("div");
 $div_cards_home.classList.add("div_cards_home");
@@ -8,8 +9,10 @@ $div_cards_home.classList.add("row");
 
 function cardDivision(values,cont_limit){
 
+  let fragment = document.createDocumentFragment();
+
     values.forEach((element) => {
-        //  console.log(element);
+        
       
         if (cont==cont_limit) {
           $div_cards_home = document.createElement("div");
@@ -29,7 +32,7 @@ function cardDivision(values,cont_limit){
               $div_col_price = document.createElement("div"),
               $span_price = document.createElement("span"),
               $div_col_link = document.createElement("div"),
-              $anchor_btn = document.createElement("a");
+              $btn = document.createElement("button");
         
               //$ = document.createTextNode("..."), para asignar alguna variable de tipo texto a un atributo
               //$ = document.querySelector(".cards"),
@@ -63,11 +66,13 @@ function cardDivision(values,cont_limit){
         $div_col_price.classList.add("col");
         $div_col_link.classList.add("col");
 
-        $anchor_btn.classList.add("btn");
-        $anchor_btn.classList.add("btn-primary");
-        $anchor_btn.classList.add("data-open")
-        $anchor_btn.innerHTML = "See more";
-
+        $btn.classList.add("open");
+        $btn.classList.add("btn");
+        $btn.classList.add("btn-primary");
+        $btn.innerHTML = "See more";
+        $btn.setAttribute("id", `_id: ${element._id}`);
+        let btnId = `_id: ${element._id}`; 
+        $btn.addEventListener('click', abrirModal);
 
         let price = `\$ ${element.price}`;
         $span_price.innerHTML = price;
@@ -82,14 +87,60 @@ function cardDivision(values,cont_limit){
         $div_row.appendChild($div_col_link);
         
         $div_col_price.appendChild($span_price);
-        $div_col_link.appendChild($anchor_btn);
+        $div_col_link.appendChild($btn);
         
         $div_cards_home.appendChild($div_card_col)
-        $main.appendChild($div_cards_home);
+
+        fragment.appendChild($div_cards_home);
       
         cont ++;
-        console.log(cont)
+        identificador ++;
+        // console.log(cont)
        });
 
+  $main.appendChild(fragment);
 
-}
+};
+
+// "name":"Collectivities Party",
+// "date":"2021-12-12",
+// "description":"Enjoy your favourite dishes, from different countries, in a unique event for the whole family.",
+// "category":"Food Fair",
+// "place":"Room A",
+// "capacity":45000,
+// "assistance":42756,
+// "price":5
+
+function abrirModal(esto){
+
+  console.log(esto);
+
+  var modal = document.getElementById("myModal");
+  var span = document.getElementsByClassName("close")[0];
+  var body = document.getElementsByTagName("body")[0];
+
+  modal.style.display = "block";
+  body.style.position = "static";
+  body.style.height = "100%";
+  body.style.overflow = "hidden";
+
+
+  span.onclick = function() {
+    modal.style.display = "none";
+  
+    body.style.position = "inherit";
+    body.style.height = "auto";
+    body.style.overflow = "visible";
+  }
+
+  window.onclick = function(event) {
+    if (event.target == modal) {
+      modal.style.display = "none";
+  
+      body.style.position = "inherit";
+      body.style.height = "auto";
+      body.style.overflow = "visible";
+    }
+  }
+};
+

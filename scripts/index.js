@@ -1,2 +1,4 @@
 let values = Object.values(data.events);
-cardDivision(values,5);
+cardDivision(values,4);
+
+
