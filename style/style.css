@@ -1,4 +1,12 @@
 /*  color events --> hexa #d90368 or rgb = r 217 // g 3 // b 104 */
+
+#main_index{
+  margin-top: 40px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px,1fr));
+  row-gap: 40px;
+}
+
 /*------------------------------------- modal container -------------------------------------------------*/
 
 

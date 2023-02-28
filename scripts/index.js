@@ -1,6 +1,4 @@
 let values = Object.values(data.events);
-//console.log(values)
-
 cardDivision(values,4);
 
 
@@ -9,13 +7,9 @@ let new_array_name = [];
 let new_array_category = [];
 let new_array_place = [];
 
-
 values.forEach(element => { new_array_name.push(element.name.toLowerCase()); });
 values.forEach(element => { new_array_category.push(element.category.toLowerCase()); });
 values.forEach(element => { new_array_place.push(element.place.toLowerCase()); });
-//console.log(new_array_name);
-//console.log(new_array_category);
-//console.log(new_array_place);
 
 
 document.getElementById("btn_searching").addEventListener("click", () => { 
@@ -26,9 +20,8 @@ document.getElementById("btn_searching").addEventListener("click", () => {
         
         let array_filter_name = values.filter( values => values.name.toLowerCase() === $str_key);
 
-        console.log(array_filter_name.length)
         removeContentMain();
-        cardDivision(array_filter_name, array_filter_name.length);
+        cardDivision(array_filter_name);
 
 
 
@@ -37,9 +30,8 @@ document.getElementById("btn_searching").addEventListener("click", () => {
         
         let array_filter_category = values.filter( values => values.category.toLowerCase() === $str_key);
         
-        console.log(array_filter_category.length)
         removeContentMain();
-        cardDivision(array_filter_category, array_filter_category.length);
+        cardDivision(array_filter_category);
         
 
 
@@ -48,12 +40,11 @@ document.getElementById("btn_searching").addEventListener("click", () => {
 
         let array_filter_place = values.filter( values => values.place.toLowerCase() === $str_key);
 
-        console.log(array_filter_place.length)
         removeContentMain();
-        cardDivision(array_filter_place, array_filter_place.length);
+        cardDivision(array_filter_place);
         
     } else {
-        alert("No match, please try again")        
+        alert("No match, please try again");
     };
 
 });
