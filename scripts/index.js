@@ -2,6 +2,7 @@ let values = Object.values(data.events);
 cardDivision(values,4);
 
 
+//_-------------------------------------------searching----------------------------------------------------->
 
 let new_array_name = [];
 let new_array_category = [];
@@ -48,6 +49,107 @@ document.getElementById("btn_searching").addEventListener("click", () => {
     };
 
 });
+
+//_-------------------------------------------checkbox----------------------------------------------------->
+
+document.getElementById("Category1").addEventListener("click", () => { 
+
+    const $str_input_checkbox = document.getElementById("Category1").value.toLowerCase();
+    console.log($str_input_checkbox);
+
+    let array_filter_category = values.filter( values => values.category.toLowerCase() === $str_input_checkbox);
+        
+    removeContentMain();
+    cardDivision(array_filter_category);
+
+});
+
+document.getElementById("Category2").addEventListener("click", () => { 
+
+    const $str_input_checkbox = document.getElementById("Category2").value.toLowerCase();
+    console.log($str_input_checkbox);
+
+    let array_filter_category = values.filter( values => values.category.toLowerCase() === $str_input_checkbox);
+        
+    removeContentMain();
+    cardDivision(array_filter_category);
+
+});
+
+document.getElementById("Category3").addEventListener("click", () => { 
+
+    const $str_input_checkbox = document.getElementById("Category3").value.toLowerCase();
+    console.log($str_input_checkbox);
+
+    let array_filter_category = values.filter( values => values.category.toLowerCase() === $str_input_checkbox);
+        
+    removeContentMain();
+    cardDivision(array_filter_category);
+
+});
+
+document.getElementById("Category4").addEventListener("click", () => { 
+
+    const $str_input_checkbox = document.getElementById("Category4").value.toLowerCase();
+    console.log($str_input_checkbox);
+
+    let array_filter_category = values.filter( values => values.category.toLowerCase() === $str_input_checkbox);
+        
+    removeContentMain();
+    cardDivision(array_filter_category);
+
+});
+
+document.getElementById("Category5").addEventListener("click", () => { 
+
+    const $str_input_checkbox = document.getElementById("Category5").value.toLowerCase();
+    console.log($str_input_checkbox);
+
+    let array_filter_category = values.filter( values => values.category.toLowerCase() === $str_input_checkbox);
+        
+    removeContentMain();
+    cardDivision(array_filter_category);
+
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
