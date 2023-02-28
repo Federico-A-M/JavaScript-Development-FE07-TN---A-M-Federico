@@ -31,9 +31,10 @@ new_values_split.forEach(element => { new_array_category.push(element.category.t
 new_values_split.forEach(element => { new_array_place.push(element.place.toLowerCase()); });
 
 
-document.getElementById("btn_searching").addEventListener("click", () => { 
-    const $str_key = document.getElementById("past_name").new_values_split.toLowerCase();
+document.getElementById("btn_searching_past").addEventListener("click", () => { 
+    const $str_key = document.getElementById("past_name").value.toLowerCase();
 
+    console.log("hello world")
     
     if (new_array_name.some( (element) => element === $str_key ) ) {
         
