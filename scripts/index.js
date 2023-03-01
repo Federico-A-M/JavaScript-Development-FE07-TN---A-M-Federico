@@ -12,45 +12,36 @@ document.getElementById("btn_searching").addEventListener("click", () => {
 
 //_-------------------------------------------checkbox----------------------------------------------------->
 
+
 document.getElementById("Category1").addEventListener("click", () => { 
-
-    let cat1 = document.getElementById("Category1");
-
+    const $cat1 = document.getElementById("Category1");
     const $str_input_checkbox = document.getElementById("Category1").value.toLowerCase();
-    let array_filter_category = values.filter( values => values.category.toLowerCase() === $str_input_checkbox);
-
-    if(cat1.checked) {
-        
-        alert('checkbox1 esta Seleccionado');
-        removeContentMain();
-        cardDivision(array_filter_category);
-
-    } else {
-        alert('checkbox1 esta Deseleccionado');
-
-    }
-
-});
-
-document.getElementById("Category2").addEventListener("click", () => { 
+    checkboxShow($cat1, values, $str_input_checkbox);
+  });
+  
+  document.getElementById("Category2").addEventListener("click", () => {
+    const $cat2 = document.getElementById("Category2"); 
     const $str_input_checkbox = document.getElementById("Category2").value.toLowerCase();
-    checkboxShow(values, $str_input_checkbox);  
-});
+    checkboxShow($cat2, values, $str_input_checkbox);
+  });
   
-document.getElementById("Category3").addEventListener("click", () => { 
+  document.getElementById("Category3").addEventListener("click", () => {
+    const $cat3 = document.getElementById("Category3"); 
     const $str_input_checkbox = document.getElementById("Category3").value.toLowerCase();
-    checkboxShow(values, $str_input_checkbox);   
-});
+    checkboxShow($cat3, values, $str_input_checkbox);
+  });
   
-document.getElementById("Category4").addEventListener("click", () => { 
+  document.getElementById("Category4").addEventListener("click", () => {
+    const $cat4 = document.getElementById("Category4"); 
     const $str_input_checkbox = document.getElementById("Category4").value.toLowerCase();
-    checkboxShow(values, $str_input_checkbox);  
-});
+    checkboxShow($cat4, values, $str_input_checkbox);
+  });
   
-document.getElementById("Category5").addEventListener("click", () => {   
+  document.getElementById("Category5").addEventListener("click", () => {
+    const $cat5 = document.getElementById("Category5"); 
     const $str_input_checkbox = document.getElementById("Category5").value.toLowerCase();
-    checkboxShow(values, $str_input_checkbox);  
-});
+    checkboxShow($cat5, values, $str_input_checkbox);
+  });
   
 
 

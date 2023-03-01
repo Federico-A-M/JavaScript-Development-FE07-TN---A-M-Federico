@@ -1,8 +1,11 @@
 const $main = document.getElementById("main_index")
 
-
-function cardDivision(values){
-  
+/** 
+    It receives the array coming from the logic of each page
+    and prints the content dynamically as cards.
+*/
+function cardDivision(values)
+{  
   let fragment = document.createDocumentFragment();
   
     values.forEach((element) => {
@@ -132,6 +135,11 @@ function cardDivision(values){
 
 }
 
-function removeContentMain(){
-  $main.innerHTML = " "; 
+
+/** 
+    Clean a main context
+*/
+function removeContentMain()
+{
+  $main.innerHTML = ""; 
 };
