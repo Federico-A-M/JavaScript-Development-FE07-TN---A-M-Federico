@@ -50,17 +50,35 @@ document.getElementById("btn_searching").addEventListener("click", () => {
 
 });
 
+
+
+
+
+
 //_-------------------------------------------checkbox----------------------------------------------------->
 
 document.getElementById("Category1").addEventListener("click", () => { 
 
-    const $str_input_checkbox = document.getElementById("Category1").value.toLowerCase();
-    console.log($str_input_checkbox);
+    let cat1 = document.getElementById("Category1");
 
+    const $str_input_checkbox = document.getElementById("Category1").value.toLowerCase();
     let array_filter_category = values.filter( values => values.category.toLowerCase() === $str_input_checkbox);
+
+    if(cat1.checked) {
         
-    removeContentMain();
-    cardDivision(array_filter_category);
+        alert('checkbox1 esta Seleccionado');
+        removeContentMain();
+        cardDivision(array_filter_category);
+
+    } else {
+        alert('checkbox1 esta Deseleccionado');
+
+    }
+
+ 
+
+        
+
 
 });
 
