@@ -37,8 +37,8 @@ function createSelectors($array)
         $checkbox_input.setAttribute("name", `Category${i}`);
         $checkbox_input.setAttribute("value", $data_cat[i]);
         $checkbox_input.addEventListener("click", () => { 
-
-            const $checked = $checkbox_input.checked.valueOf;
+            
+            const $checked = $checkbox_input.checked;
             //console.log($checked)
             checkboxShow($checked, $array, $data_cat[i]);
 

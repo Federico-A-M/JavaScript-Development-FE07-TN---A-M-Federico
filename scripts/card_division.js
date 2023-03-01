@@ -23,6 +23,7 @@ function cardDivision(values)
               $btn = document.createElement("button");
   
         
+        $div_card_col.setAttribute("id", element.name.toLowerCase());
         $div_card_col.classList.add("card_col");
         $div_card_col.classList.add("col");
         $div_card.classList.add("card");
@@ -134,6 +135,18 @@ function cardDivision(values)
   $main.appendChild(fragment)
 
 }
+
+
+
+/** 
+    Remove especific string name id card
+*/
+function removeCards($child)
+{
+  let $nodo  = document.getElementById($child.toLowerCase());
+  $main.removeChild($nodo); 
+};
+
 
 
 /** 
