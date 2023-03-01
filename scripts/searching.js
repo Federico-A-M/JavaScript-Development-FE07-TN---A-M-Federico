@@ -53,15 +53,15 @@ function searchingBar(values, $str_key)
     Recibe un array y str proveniente del valor del checkbox
     realiza la operacion de generar el filtrado de las cards que coincidan con el valor str
 */ 
-function checkboxShow($tag_element, array, $str_input_checkbox)
+function checkboxShow($booleano, array, $str_input_checkbox)
 {
 
     let $array_filter_category = array.filter( array => array.category.toLowerCase() === $str_input_checkbox);
       
-    
 
-    if($tag_element.checked) {
+    if($booleano) {
         
+        console.log("enable")
         //si boolean = 1 manda a revisar si otras categorias estan activadas.
         removeContentMain();
         cardDivision($array_filter_category);
