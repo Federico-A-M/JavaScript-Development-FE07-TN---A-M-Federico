@@ -49,10 +49,14 @@ function searchingBar(values, $str_key)
 
 
 
-/** 
-    Recibe un array y str proveniente del valor del checkbox
-    realiza la operacion de generar el filtrado de las cards que coincidan con el valor str
-*/ 
+
+/**
+Recibe un booleano, el array de la logica de pagina, y la categoria que esta iterando en ese momento
+a analizar si es mostrable o no y compatible con otras categorias desde: --> selectors.js
+
+ ---> deberia poder llegar el objeto a analizar
+
+ */
 function checkboxShow($booleano, $array, $str_input_checkbox)
 {
 /** 
@@ -60,17 +64,18 @@ function checkboxShow($booleano, $array, $str_input_checkbox)
     PARA AGREGAR O BORRAR CONTENIDOS... UN QUILOMBITO POR ACA
 */ 
     if($booleano) {
-        
         //si boolean = 1 manda a revisar si otras categorias estan activadas.
 
-
-
         let $array_filter_category = $array.filter( $array => $array.category.toLowerCase() === $str_input_checkbox);
-        //removeContentMain()
-        cardDivision($array_filter_category);
+        //removeContentMain();
+        verifyCheck($array_filter_category);
+        //falta hacer un return a un lado donde guardo este array y voy borrando y agregando desde el array
+        //si el array esta vacio returna al origen  
+
 
     } else {
         //si boolean = 0 envia a desactivar las cartas que posean esta propiedad.
+        
         let $array_filter_category = $array.filter( $array => $array.category.toLowerCase() === $str_input_checkbox);
         $array_filter_category.forEach(element => { removeCards(element.name) });
     }
@@ -79,9 +84,9 @@ function checkboxShow($booleano, $array, $str_input_checkbox)
 
 
 /** 
-    veerifica si otras casillas estan disponibles
+    veerifica si otras casillas estan disponibles   
 */ 
-function verifyCheck()
+function verifyCheck($this)
 {
 
 
@@ -96,8 +101,12 @@ function verifyCheck()
 
 
     if ($check0 || $check1 || $check2 || $check3 || $check4 || $check5 || $check6) {
-        alert('checkboxssss estan seleccionado');
-    }
+        cardDivision($this);
+        
+    } else {
+        removeContentMain()
+        cardDivision($array_filter_place);
+    };
 };
 
 

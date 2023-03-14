@@ -9,8 +9,11 @@ let $data_cat = [...dataArr].sort();
 
 console.log($data_cat); 
 
-
-function createSelectors($array)
+ /** 
+    La funcions es llamada desde lal logica de cada pagina
+    recibe el array y genera las categorias pertinentes dependiendo del caso.
+ */ 
+    function createSelectors($array)
 {
     let fragment = document.createDocumentFragment();
     
@@ -40,6 +43,11 @@ function createSelectors($array)
             
             const $checked = $checkbox_input.checked;
             //console.log($checked)
+
+            /** 
+            manda el booleano, el array de la logica de pagina, y la categoria que esta iterando
+            a analizar si es mostrable o no y compatible con otras categorias a --> searching.js 
+             */ 
             checkboxShow($checked, $array, $data_cat[i]);
 
           });
