@@ -2,6 +2,8 @@ let new_array_name = [];
 let new_array_category = [];
 let new_array_place = [];
 
+let arrayContentChecks = [];
+
 /** 
     Recibe un array y str proveniente de la barra de busqueda
     realiza foreach del array y genera 3 nuevos arreglos dependiedo la tematica
@@ -57,39 +59,78 @@ a analizar si es mostrable o no y compatible con otras categorias desde: --> sel
  ---> deberia poder llegar el objeto a analizar
 
  */
-function checkboxShow($booleano, $array, $str_input_checkbox)
+function checkboxShow($booleano, $arrayOriginal, $str_input_checkbox)
 {
 /** 
     LA QUEDE ACA, PENSANDO COMO PASAR EL OBJETO CHECKBOX PARA VALIDAR SI ESTA ACTIVADO O NO, PARA SABER COMO HAGO
     PARA AGREGAR O BORRAR CONTENIDOS... UN QUILOMBITO POR ACA
 */ 
     if($booleano) {
-        //si boolean = 1 manda a revisar si otras categorias estan activadas.
 
-        let $array_filter_category = $array.filter( $array => $array.category.toLowerCase() === $str_input_checkbox);
-        //removeContentMain();
-        verifyCheck($array_filter_category);
-        //falta hacer un return a un lado donde guardo este array y voy borrando y agregando desde el array
-        //si el array esta vacio returna al origen  
-
+        let $array_filter_category = $arrayOriginal.filter( $arrayOriginal => $arrayOriginal.category.toLowerCase() === $str_input_checkbox);
+        agregarCheckBtn($array_filter_category, $arrayOriginal);
 
     } else {
+
         //si boolean = 0 envia a desactivar las cartas que posean esta propiedad.
-        
-        let $array_filter_category = $array.filter( $array => $array.category.toLowerCase() === $str_input_checkbox);
-        $array_filter_category.forEach(element => { removeCards(element.name) });
+        let $array_filter_category = $arrayOriginal.filter( $arrayOriginal => $arrayOriginal.category.toLowerCase() === $str_input_checkbox);
+        quitarCheckBtn($array_filter_category, $arrayOriginal);
     }
 };
 
 
 
 /** 
-    veerifica si otras casillas estan disponibles   
+    Recibe el filtrado y el original
+    agrega al array dedicado los elementos recien peticionados
+    y manda a verificar el estado actual de los inputs 
 */ 
-function verifyCheck($this)
+function agregarCheckBtn($array_filtrado, $arrayOriginal){
+
+    $array_filtrado.forEach(element => {
+        arrayContentChecks.push(element)
+    });
+
+    verifyCheck(arrayContentChecks, $arrayOriginal);
+}
+
+
+/** 
+    Recibe el filtrado y el original
+    borra del array dedicado los elementos peticionados
+    y manda a verificar el estado actual de los inputs 
+*/ 
+function quitarCheckBtn($array_filtrado, $arrayOriginal){
+    
+    $array_filtrado.forEach((item) => {
+        for (let index in arrayContentChecks) {
+          // Si el índice de ambos array coinciden se procederá
+          // a eliminar el elemento de «arrayContentChecks»:
+          if (arrayContentChecks[index].category == item.category) {
+            arrayContentChecks.splice(index, 1);
+          }
+        }
+      });
+
+    verifyCheck(arrayContentChecks, $arrayOriginal);
+}
+
+
+
+
+
+/** 
+    veerifica si otras casillas estan activadas, de ser asi imprime el array en el estado actual
+    sino verifica el estado del array dedicado
+    si no contiene elementos retorna al estado original de contenido
+    sino sino imprime el contenido recien introducido
+      
+*/ 
+
+function verifyCheck($this, $arrayOriginal)
 {
 
-
+        
     let $check0 = document.getElementById('Category0').checked;
     let $check1 = document.getElementById('Category1').checked;
     let $check2 = document.getElementById('Category2').checked;
@@ -97,34 +138,22 @@ function verifyCheck($this)
     let $check4 = document.getElementById('Category4').checked;
     let $check5 = document.getElementById('Category5').checked;
     let $check6 = document.getElementById('Category6').checked;
-
-
-
+    
+    
+    
     if ($check0 || $check1 || $check2 || $check3 || $check4 || $check5 || $check6) {
+        removeContentMain();
         cardDivision($this);
         
     } else {
-        removeContentMain()
-        cardDivision($array_filter_place);
+
+        if ($this.length == 0) {
+            removeContentMain();
+            cardDivision($arrayOriginal);
+        } else {
+            removeContentMain()
+            cardDivision($this);
+        }
+        
     };
-};
-
-
-
-/** 
-    veerifica si otras casillas estan disponibles
-*/ 
-function enableCheckbox()
-{
-
-};
-
-
-
-/** 
-    veerifica si otras casillas estan disponibles
-*/ 
-function disableCheckbox()
-{
-
 };
