@@ -6,15 +6,22 @@ $data.forEach(element => { $array_of_categorys.push(element.category.toLowerCase
 
 const dataArr = new Set($array_of_categorys);
 let $data_cat = [...dataArr].sort();
+//console.log($data_cat); 
 
-console.log($data_cat); 
+
+
+
+
+
+
+
 
  /** 
     La funcions es llamada desde lal logica de cada pagina
     recibe el array y genera las categorias pertinentes dependiendo del caso.
  */ 
-    function createSelectors($array)
-{
+function createSelectors($array){
+        
     let fragment = document.createDocumentFragment();
     
     for (let i = 0; i < $data_cat.length; i++) {
@@ -95,7 +102,7 @@ console.log($data_cat);
     $btn_searching.addEventListener("click", () => {   
 
         const $str_key = document.getElementById("name").value.toLowerCase();
-        searchingBar( values, $str_key);
+        searchingBar(values, $str_key);
 
     });
 

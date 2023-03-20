@@ -4,6 +4,8 @@ const $main = document.getElementById("main_index")
     It receives the array coming from the logic of each page
     and prints the content dynamically as cards.
 */
+
+
 function cardDivision(values)
 {  
   let fragment = document.createDocumentFragment();
