@@ -240,14 +240,16 @@ async function sumatoria_pasada($array, $tbody){
                     if (i==1) {
                         const $th = document.createElement("th");
                         $th.classList.add("th_null");
-                        $th.innerHTML = `<p> ${element.ganancias} </p>`;
+                        let $recaudacion = element.ganancias * element.porcentaje;
+                        $th.innerHTML = `<p> $ ${$recaudacion} </p>`;
                         $tr.appendChild($th)        
                     }
 
                     if (i==2) {
                         const $th = document.createElement("th");
                         $th.classList.add("th_null");
-                        $th.innerHTML = `<p> ${element.porcentaje} </p>`;
+                        let $porciento = parseInt((element.porcentaje * 100) / $total); 
+                        $th.innerHTML = `<p> ${$porciento}% </p>`;
                         $tr.appendChild($th) 
                     }
                                     
@@ -367,14 +369,16 @@ async function sumatoria_futura($array, $tbody){
                     if (i==1) {
                         const $th = document.createElement("th");
                         $th.classList.add("th_null");
-                        $th.innerHTML = `<p> ${element.ganancias} </p>`;
+                        let $recaudacion = element.ganancias * element.porcentaje;
+                        $th.innerHTML = `<p> $ ${$recaudacion} (estimate) </p>`;
                         $tr.appendChild($th)        
                     }
 
                     if (i==2) {
                         const $th = document.createElement("th");
                         $th.classList.add("th_null");
-                        $th.innerHTML = `<p> ${element.porcentaje} </p>`;
+                        let $porciento = parseInt((element.porcentaje * 100) / $total); 
+                        $th.innerHTML = `<p> ${$porciento}% </p>`;
                         $tr.appendChild($th) 
                     }
                                     
