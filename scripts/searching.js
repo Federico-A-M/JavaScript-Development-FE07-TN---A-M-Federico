@@ -4,43 +4,63 @@ let new_array_place = [];
 
 let arrayContentChecks = [];
 
-/** 
-    Recibe un array y str proveniente de la barra de busqueda
-    realiza foreach del array y genera 3 nuevos arreglos dependiedo la tematica
-    si el parametro str pertenece a alguno de los 3 arreglos imprime la informacion correspondiente
-    sino da una alerta al usuario de que no se encuentra match disponible.
-*/ 
-function searchingBar(values, $str_key)
-{
-    values.forEach(element => { new_array_name.push(element.name.toLowerCase()); });
-    values.forEach(element => { new_array_category.push(element.category.toLowerCase()); });
-    values.forEach(element => { new_array_place.push(element.place.toLowerCase()); });
 
-    if (new_array_name.some( (element) => element === $str_key ) ) {
-        
-        let array_filter_name = values.filter( values => values.name.toLowerCase() === $str_key);
 
-        removeContentMain();
-        cardDivision(array_filter_name);
-        
-    } else if (new_array_category.some( (element) => element === $str_key ) ) {
-        
-        let array_filter_category = values.filter( values => values.category.toLowerCase() === $str_key);
-        
-        removeContentMain();
-        cardDivision(array_filter_category);
-        
 
-    } else if (new_array_place.some( (element) => element === $str_key ) ) {
+  
+  
+  /** 
+   Recibe un array y str proveniente de la barra de busqueda
+   realiza foreach del array y genera 3 nuevos arreglos dependiedo la tematica
+   si el parametro str pertenece a alguno de los 3 arreglos imprime la informacion correspondiente
+   sino da una alerta al usuario de que no se encuentra match disponible.
+   */ 
+async function searchingBar($str_key){
 
-        let array_filter_place = values.filter( values => values.place.toLowerCase() === $str_key);
 
-        removeContentMain();
-        cardDivision(array_filter_place);
+     
+        try {
+          
+            const response = await fetch(urlApi);
+            console.log(response);
+            const data = await response.json();
+
+            data.events.forEach(element => { new_array_name.push(element.name.toLowerCase()); });
+            data.events.forEach(element => { new_array_category.push(element.category.toLowerCase()); });
+            data.events.forEach(element => { new_array_place.push(element.place.toLowerCase()); });
         
-    } else {
-        alert("No match, please try again");
-    };
+        
+            if (new_array_name.some( (element) => element === $str_key ) ) {
+                
+                let array_filter_name = data.events.filter( values => values.name.toLowerCase() === $str_key);
+        
+                removeContentMain();
+                cardDivision(array_filter_name);
+                
+            } else if (new_array_category.some( (element) => element === $str_key ) ) {
+                
+                let array_filter_category = data.events.filter( values => values.category.toLowerCase() === $str_key);
+                
+                removeContentMain();
+                cardDivision(array_filter_category);
+                
+        
+            } else if (new_array_place.some( (element) => element === $str_key ) ) {
+        
+                let array_filter_place = data.events.filter( values => values.place.toLowerCase() === $str_key);
+        
+                removeContentMain();
+                cardDivision(array_filter_place);
+                
+            } else {
+                alert("No match, please try again");
+            };
+        
+           
+        } catch (error) {
+            console.log(error);
+        } 
+
 
 
 };

@@ -102,7 +102,8 @@ function createSelectors($array){
     $btn_searching.addEventListener("click", () => {   
 
         const $str_key = document.getElementById("name").value.toLowerCase();
-        searchingBar(values, $str_key);
+        
+        searchingBar($str_key);
 
     });
 
