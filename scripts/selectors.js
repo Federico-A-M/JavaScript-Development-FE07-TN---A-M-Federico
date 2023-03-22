@@ -73,6 +73,7 @@ function createSelectors($array){
         fragment.appendChild($div_text_switcher)
     };
     
+    /** Barra de busqueda a continuacion de los checkboxes */
     $header_section.appendChild(fragment);
 
     const $div_searching_resize = document.createElement("div"),
